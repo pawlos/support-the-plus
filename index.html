@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Support the &#39;+&#39; in e-mail addresses by pawlos</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Support the &#39;+&#39; in e-mail addresses</h1>
+        <p>Why &#39;+&#39; matters</p>
+
+        <p class="view"><a href="https://github.com/pawlos/support-the-plus">View the Project on GitHub <small>pawlos/support-the-plus</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/pawlos/support-the-plus/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/pawlos/support-the-plus/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/pawlos/support-the-plus">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a id="what-is-this-about" class="anchor" href="#what-is-this-about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is this about?</h3>
+
+<p>Have you every encountered a situation when your valid e-mail address, which only crime was to have a '+' sign in it, was rejected. Have you ever wondered why it happened since <a href="https://tools.ietf.org/html/rfc5322">RFC-5322</a> and <a href="https://tools.ietf.org/html/rfc5321">RFC-5321</a> allow it?</p>
+
+<h3>
+<a id="why-is-that-important" class="anchor" href="#why-is-that-important" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why is that important?</h3>
+
+<p>Gmail doesn't have an aliasing mechanism. Instead they allow to add ant part after '+' in the local part of the e-mail address and the message will still be delivered to you. I.e. if your e-mail address is <a href="mailto:jon.doe@gmail.com">jon.doe@gmail.com</a> then you can also get messages sent to <a href="mailto:jon.doe+netflix@gmail.com">jon.doe+netflix@gmail.com</a> or <a href="mailto:jon.doe+facebook@gmail.com">jon.doe+facebook@gmail.com</a>. Thanks to this you can create filters and have a clean inbox. </p>
+
+<h2>
+<a id="so-how-to-change-this" class="anchor" href="#so-how-to-change-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>So how to change this</h2>
+
+<h3>
+<a id="are-you-a-developer-heres-what-you-to-do" class="anchor" href="#are-you-a-developer-heres-what-you-to-do" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Are you a developer? Here's what you to do</h3>
+
+<p>Support the plus. Use build-in validation rules for e-mails. Do not write your own. The build-in ones are usually better and by default support the '+'. If not then use proper regexp for validating the local part or the full e-mail address. This one is from the RFC:</p>
+
+<blockquote>
+<p>(?:[a-z0-9!#$%&amp;'<em>+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&amp;'</em>+/=?^_`{|}~-]+)<em>|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\[\x01-\x09\x0b\x0c\x0e-\x7f])</em>")@(?:(?:a-z0-9?.)+a-z0-9?|[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\[\x01-\x09\x0b\x0c\x0e-\x7f])+)])</p>
+</blockquote>
+
+<p>Scary? Then check <a href="http://emailregex.com">http://emailregex.com</a> for more info.</p>
+
+<h3>
+<a id="are-you-a-user-heres-what-you-can-do" class="anchor" href="#are-you-a-user-heres-what-you-can-do" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Are you a user? Here's what you can do</h3>
+
+<p>Yell at the owner! Tweet, post on their Facebook or write an e-mail saying that you can't register/subscribe or buy their stuff due to their improper e-mail validation. If enough of us will tell them the same - they will listen!</p>
+
+<h3>
+<a id="are-you-an-owner-of-the-site" class="anchor" href="#are-you-an-owner-of-the-site" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Are you an owner of the site?</h3>
+
+<p>Support the plus! Do not reject e-mail addresses with plus in it. They your developer it's important not to reject any users.</p>
+
+<h2>
+<a id="faq" class="anchor" href="#faq" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FAQ</h2>
+
+<ul>
+<li>But it's due to a security
+Then you security is broken. '+' is a valid character and if you can't handle it correctly then we fear for other security things you do in your application. If you do not support it at least be honest and tell the truth. <a href="http://security.stackexchange.com/questions/65244/what-are-the-security-reasons-for-disallowing-the-plus-sign-in-email-addresses">Here</a>'s the stackexchange topic on the matter.</li>
+</ul>
+
+<hr>
+
+<p>If you want to support us then clone this <a href="https://github.com/pawlos/support-the-plus">repo</a>, make it better and send a PR. Also use the hashtag #support+ to spread the idea. Thanks.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/pawlos">pawlos</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
